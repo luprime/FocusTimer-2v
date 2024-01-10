@@ -2,29 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
+  }
+  
+  :root {
     font-size: 62.5%;
     --primary-color: #323238;
     --secondary-color: #fff;
     --primary-bg: #fff;
     --secondary-bg: #323238;
-}
-
-html.dark-mode{
-    --primaty-color: #fff;
-    --primaty-bg: #323238;
-}
-
-body {
+  }
+  
+  html.dark-mode{
+    --primary-color: #fff;
+    --primary-bg: #323238;
+  }
+  
+  body{
     display: grid;
     place-items: center;
     height: 100vh;
+  
     background-color: var(--primary-bg);
-}
-
-#toggle-mode {
+  }
+  
+  #toggle-mode {
     position: absolute;
     top: 3.2rem;
     right: 3.2rem;
@@ -33,71 +34,77 @@ body {
     font-size: 4rem;
     color: var(--primary-color);
     cursor: pointer;
-}
-
-html.dark-mode .ph-moon,
-html:not(.dark-mode) .ph-sun{
+  }
+  
+  html.dark-mode .ph-moon,
+  html:not(.dark-mode) .ph-sun {
     display: none;
-}
-
-#app{
+  }
+  
+  html.running .ph-play-circle,
+  html:not(.running) .ph-pause-circle {
+    display: none;
+  }
+  
+  #app{
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 19.2rem;
-}
-
-span {
+  }
+  
+  
+  span {
     font-family: "Roboto", sans-serif;
     color: var(--primary-color);
     font-size: 12.6rem;
     line-height: 14.8rem;
-}
-
-.controls {
+  }
+  
+  .controls {
     display: flex;
     gap: 4rem;
-
+  
     margin-top: 1.7rem;
-}
-
-.controls button {
+  }
+  
+  .controls button {
     background: transparent;
     border: none;
     color: var(--primary-color);
     font-size: 4.8rem;
     cursor: pointer;
-}
-
-.music-grid {
+  }
+  
+  .music-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
-}
-
-.music-off{
+  }
+  
+  .music-off {
     border: none;
     border-radius: 2.4rem;
     background-color: transparent;
     cursor: pointer;
-    background-color: #e1e1e6;
+    background-color: #E1E1E6;
     width: 14rem;
     height: 15rem;
-}
-
-.music-off img,
-.music-on img{
+  }
+  
+  .music-off img,
+  .music-on img{
     pointer-events: none
-}
-
-.music-on {
+  }
+  
+  .music-on {
     border: none;
     border-radius: 2.4rem;
     background-color: transparent;
     cursor: pointer;
-    background-color: #02799d;
+    background-color: #02799D;
     width: 14rem;
     height: 15rem;
-}
+  }
