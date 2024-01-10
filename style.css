@@ -6,69 +6,98 @@
 
 :root {
     font-size: 62.5%;
-    --bg-color:hsla(0, 0%, 100%, 1);
-    --bg-color-cards:hsla(240, 9%, 89%, 1);
-    --bg-color-cards-selected: hsla(194, 97%, 31%, 1);
-    --fc-color:hsla(240, 6%, 21%, 1);
+    --primary-color: #323238;
+    --secondary-color: #fff;
+    --primary-bg: #fff;
+    --secondary-bg: #323238;
+}
+
+html.dark-mode{
+    --primaty-color: #fff;
+    --primaty-bg: #323238;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--fc-color);
-    font-family: 'Roboto', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--primary-bg);
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 19.2rem;
+#toggle-mode {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    border: none;
+    background-color: transparent;
+    font-size: 4rem;
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
-#timer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
-    font-weight: 500;
-    margin-bottom: 1.6rem;
-}
-
-#controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
-    width: clamp(10rem, 10rem + 30vw, 22.8rem);
-    height: clamp(8rem, 5rem + 10vw, 10.8rem);
-}
-
-.hide {
+html.dark-mode .ph-moon,
+html:not(.dark-mode) .ph-sun{
     display: none;
 }
 
-
-.play, .pause, .more, .less, .set, .stop {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
-
-}
-
-#sound-cards {
-    margin-bottom: 11rem;
-    align-items: center;
+#app{
     display: flex;
-    flex-wrap: wrap; /*para quebrar a linha */
-    width: 30.8rem;
-    height: 33.6rem;
-    gap: 3.2rem;
+    align-items: center;
+    justify-content: space-around;
+    gap: 19.2rem;
 }
 
-.music {
-    width: 13.8rem;
-    height: 15.2rem;
-    border-radius: 2.4rem;
+span {
+    font-family: "Roboto", sans-serif;
+    color: var(--primary-color);
+    font-size: 12.6rem;
+    line-height: 14.8rem;
+}
+
+.controls {
+    display: flex;
+    gap: 4rem;
+
+    margin-top: 1.7rem;
+}
+
+.controls button {
+    background: transparent;
     border: none;
+    color: var(--primary-color);
+    font-size: 4.8rem;
+    cursor: pointer;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+}
+
+.music-off{
+    border: none;
+    border-radius: 2.4rem;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #e1e1e6;
+    width: 14rem;
+    height: 15rem;
+}
+
+.music-off img,
+.music-on img{
+    pointer-events: none
+}
+
+.music-on {
+    border: none;
+    border-radius: 2.4rem;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #02799d;
+    width: 14rem;
+    height: 15rem;
 }
